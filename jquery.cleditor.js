@@ -62,17 +62,17 @@
     buttons: {
       // name,title,command,popupName (""=use name)
       init:
-      "bold,,|" +
-      "italic,,|" +
-      "underline,,|" +
+      "bold,加粗,|" +
+      "italic,斜体,|" +
+      "underline,下划线,|" +
       "strikethrough,,|" +
       "subscript,,|" +
       "superscript,,|" +
-      "font,,fontname,|" +
-      "size,Font Size,fontsize,|" +
+      "font,字体,fontname,|" +
+      "size,文字大小,fontsize,|" +
       "style,,formatblock,|" +
-      "color,Font Color,forecolor,|" +
-      "highlight,Text Highlight Color,hilitecolor,color|" +
+      "color,颜色,forecolor,|" +
+      "highlight,背景颜色,hilitecolor,color|" +
       "removeformat,Remove Formatting,|" +
       "bullets,,insertunorderedlist|" +
       "numbering,,insertorderedlist|" +
@@ -86,14 +86,14 @@
       "redo,,|" +
       "rule,Insert Horizontal Rule,inserthorizontalrule|" +
       "image,Insert Image,insertimage,url|" +
-      "link,Insert Hyperlink,createlink,url|" +
+      "link,插入链接,createlink,url|" +
       "unlink,Remove Hyperlink,|" +
       "cut,,|" +
       "copy,,|" +
       "paste,,|" +
-      "pastetext,Paste as Text,inserthtml,|" +
+      "pastetext,粘贴文本,inserthtml,|" +
       "print,,|" +
-      "source,Show Source"
+      "source,源代码"
     },
 
     // imagesPath - returns the path to the images folder
@@ -412,7 +412,7 @@
 
           // Check for selection before showing the link url popup
           if (buttonName == "link" && selectedText(editor) === "") {
-            showMessage(editor, "A selection is required when inserting a link.", buttonDiv);
+            showMessage(editor, "先选中再添加链接.", buttonDiv);
             return false;
           }
 
@@ -635,13 +635,13 @@
 
     // URL
     else if (popupName == "url") {
-      $popup.html('Enter URL:<br><input type=text value="http://" size=35><br><input type=button value="Submit">');
+      $popup.html('Enter URL:<br><input type=text value="http://" size=35><br><input type=button value="提交">');
       popupTypeClass = PROMPT_CLASS;
     }
 
     // Paste as Text
     else if (popupName == "pastetext") {
-      $popup.html('Paste your content here and click submit.<br /><textarea cols=40 rows=3></textarea><br /><input type=button value=Submit>');
+      $popup.html('粘贴你的内容到此并提交.<br /><textarea cols=40 rows=3></textarea><br /><input type=button value="提交">');
       popupTypeClass = PROMPT_CLASS;
     }
 
